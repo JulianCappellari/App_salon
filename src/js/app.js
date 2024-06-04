@@ -4,7 +4,7 @@ const pasoFinal = 3;
 
 const cita = {
     id: '',
-    : '',
+    nombre: '',
     fecha: '',
     hora: '',
     servicios: []
