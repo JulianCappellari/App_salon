@@ -23,7 +23,7 @@ class AdminController {
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio, servicios.precio  ";
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";
-        $consulta .= " ON citas.usuarioId=usuarios.id  ";
+        $consulta .= " ON citas.usuariosid=usuarios.id  ";
         $consulta .= " LEFT OUTER JOIN citasServicios ";
         $consulta .= " ON citasServicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";

@@ -116,6 +116,7 @@ async function consultarAPI() {
 
     try {
         const url = `/api/servicios`;
+        // const url = `http://localhost:4000/api/servicios`;
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -330,16 +331,19 @@ async function reservarCita() {
     const datos = new FormData();
     
 
+    datos.append('usuariosid', id);
     datos.append('fecha', fecha);
     datos.append('hora', hora );
-    datos.append('usuarioId', id);
     datos.append('servicios', idServicios);
+
+    console.log(datos)
 
     // console.log([...datos]);
 
     try {
         // Petición hacia la api
         const url = `/api/citas`
+        // const url = `http://localhost:4000/api/citas`
         const respuesta = await fetch(url, {
             method: 'POST',
             body: datos
